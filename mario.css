@@ -1,12 +1,11 @@
 * { box-sizing: border-box;}
 
 .ground {
-  animation: move 10s steps(1000) infinite forwards;
+  animation: move 10s steps(1000) 4 forwards;
 }
 
 .enemy {
-  animation: walk 10s steps(1000) infinite forwards, jump 10s steps(1000) 1 forwards, jump2 10s steps(1000) 21.5s 1 forwards;
-}
+  animation: walk 10s steps(1000) 5 forwards, jump 10s steps(100) 1 forwards, jump2 10s steps(1000) 21.5s 1 forwards, scala 1s steps(100) 26.5s 1 forwards, jump3 4s steps(100) 38.5s 1 forwards, jump4 1s steps(100) 43s 1 forwards, hido 0s steps(1) 47s 1 forwards;}
 
 .mario {
   animation: walk2 10s steps(1500) 1 forwards, hido 0s steps(1) 3.5s infinite forwards, shou 0s steps(1) 10s 1 forwards;
@@ -19,18 +18,40 @@
 .block {  animation: shou  0s steps(1) 20s 1 forwards, hido 0s steps(1) 30s 1 forwards;
 }
 
-.champi { animation: shou  0s steps(1) 20s 1 forwards, hido 0s steps(1) 30s 1 forwards, move2 1s steps(100) 24.5s 1 forwards, seta 1s steps(100) 24.6;}
+.champi { animation: shou  0s steps(1) 20s 1 forwards, hido 0s steps(1) 26.5s 1 forwards, move2 1s steps(100) 24.5s 1 forwards, seta 1s steps(100) 25s 1 forwards, caida 1s steps(100) 26s 1 forwards;}
+
+.escalera { animation: shou  0s steps(1) 40s 1 forwards;}
+
+.palo { animation: shou  0s steps(1) 40s 1 forwards;}
+
+.castillo { animation: shou  0s steps(1) 40s 1 forwards;}
+
+.congratulations {  animation: scala2 10s steps(1000) 50s 1 forwards, shou 0s steps(1) 49.5s 1 forwards ; }
+
+  @keyframes scala2 {
+    100%{transform: scale(2);}
+  }
 
 @keyframes move {
   100% { background-position: -1680px 0px; }
 }
 
 @keyframes move2 {
-  100% { margin-bottom: 190px;}
+  100% { margin-bottom: 187px;}
 }
 
-@keyframes move2 {
-  100% { margin-: 190px;}
+@keyframes seta {
+  100% { margin-right: 50px;}
+}
+
+@keyframes scala {
+  100%{transform: scale(0.4); margin-bottom: 20px;}
+}
+
+
+@keyframes caida {
+  50% { margin-bottom: -200px;}
+  100%{ margin-right:  -250px;}
 }
 
 @keyframes dead {
@@ -67,6 +88,26 @@
   65% { bottom: 13px; }
   70% { bottom: 13px; }
   100% { bottom: 13px; }
+}
+
+@keyframes jump4 {
+  10% { bottom: 360px; }
+  50% { bottom: 360px; }
+  80% { bottom: 360px; }
+  100% { bottom: 13px; }
+}
+
+
+@keyframes jump3 {
+  0% { bottom: 13px; }
+  25% {bottom: 13px;}
+  30% { bottom: 50px; }
+  35% {bottom: 75px;}
+  40% {bottom: 75px;}
+  60% { bottom: 100px; }
+  65% { bottom: 200px; }
+  70% { bottom: 200px; }
+  100% { bottom: 320px; }
 }
 
 @keyframes jump2 {
@@ -161,4 +202,58 @@
   opacity: 0 ;
   visibility: hidden;
   transform: scale(0.1);
+}
+
+.castillo {
+  background-image: url("images/super-mario/castle.png");
+  width: 287px;
+  height: 259px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: -27px;
+  margin-bottom: 113px;
+  opacity: 0 ;
+  visibility: hidden;
+}
+
+.palo {
+  background-image: url("images/super-mario/palo.png");
+  width: 209px;
+  height: 640px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 350px;
+  margin-bottom: 113px;
+  opacity: 0 ;
+  visibility: hidden;
+}
+
+.escalera {
+  background-image: url("images/super-mario/escalera.png");
+  width: 308px;
+  height: 233px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 600px;
+  margin-bottom: 149px;
+  transform: scale(1.3);
+  opacity: 0 ;
+  visibility: hidden;
+}
+
+.congratulations {
+  background-image: url("images/super-mario/congratulations.png");
+  width: 468px;
+  height: 222px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 250px;
+  margin-bottom: 400px;
+  transform: scale(0.2);
+  opacity: 0 ;
+  visibility: hidden;
 }
