@@ -1,0 +1,164 @@
+* { box-sizing: border-box;}
+
+.ground {
+  animation: move 10s steps(1000) infinite forwards;
+}
+
+.enemy {
+  animation: walk 10s steps(1000) infinite forwards, jump 10s steps(1000) 1 forwards, jump2 10s steps(1000) 21.5s 1 forwards;
+}
+
+.mario {
+  animation: walk2 10s steps(1500) 1 forwards, hido 0s steps(1) 3.5s infinite forwards, shou 0s steps(1) 10s 1 forwards;
+}
+
+.mario-dead {
+ animation: shou  0s steps(1) 3.5s 1 forwards, dead 1s steps(100) 3.7s 1 forwards;
+}
+
+.block {  animation: shou  0s steps(1) 20s 1 forwards, hido 0s steps(1) 30s 1 forwards;
+}
+
+.champi { animation: shou  0s steps(1) 20s 1 forwards, hido 0s steps(1) 30s 1 forwards, move2 1s steps(100) 24.5s 1 forwards, seta 1s steps(100) 24.6;}
+
+@keyframes move {
+  100% { background-position: -1680px 0px; }
+}
+
+@keyframes move2 {
+  100% { margin-bottom: 190px;}
+}
+
+@keyframes move2 {
+  100% { margin-: 190px;}
+}
+
+@keyframes dead {
+  50% { margin-bottom: 250px; }
+  60% { margin-bottom: 100px;}
+  70% { margin-bottom: 0px;}
+  100% { margin-bottom: -250px;}
+}
+
+@keyframes walk2 {
+  55% {margin-right: 700px; }
+  100% {margin-right: 1000px; }
+}
+
+@keyframes hido {
+  100% { opacity:0; visibility: hidden;}
+}
+
+@keyframes shou {
+  100% { opacity: 1; visibility: visible; }
+}
+
+@keyframes walk {
+  100% { margin-left: 1024px;}
+}
+
+@keyframes jump {
+  0% { bottom: 13px; }
+  25% {bottom: 13px;}
+  30% { bottom: 300px; }
+  35% {bottom: 180px;}
+  40% {bottom: 315px;}
+  60% { bottom: 13px; }
+  65% { bottom: 13px; }
+  70% { bottom: 13px; }
+  100% { bottom: 13px; }
+}
+
+@keyframes jump2 {
+  0% { bottom: 13px; }
+  25% {bottom: 13px;}
+  30% { bottom: 250px; }
+  35% {bottom: 13px;}
+  40% {bottom: 13px;}
+  60% { bottom: 13px; }
+  65% { bottom: 13px; }
+  70% { bottom: 13px; }
+  100% { bottom: 13px; }
+}
+
+.background {
+	padding: 100px;
+  width: 1024px;
+  height: 768px;
+  border: thin solid black;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: skyblue;
+}
+
+.ground {
+  background-image: url("images/super-mario/ground.png");
+  width: 1680px;
+  height: 113px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.enemy {
+  background-image: url("images/super-mario/goomba.gif");
+  width: 256px;
+  height: 256px;
+  position: absolute;
+  bottom: 13px;
+  transform: scale(0.3);
+  margin-left: -175px;
+}
+
+.mario {
+  background-image: url("images/super-mario/mario.gif");
+  width: 500px;
+  height: 580px;
+  transform: scale(0.3);
+  position: absolute;
+  bottom: -100px;
+  right: 0;
+  margin-right: -350px;
+}
+
+.mario-dead {
+  background-image: url("images/super-mario/mariomuerte.png");
+  width: 144px;
+  height: 224px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 480px;
+  margin-bottom: 100px;
+  transform: scale(0.8);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.block {
+  background-image: url("images/super-mario/question-block.png");
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 400px;
+  margin-bottom: 400px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.champi {
+  background-image: url("images/super-mario/champi.png");
+  width: 640px;
+  height: 640px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 117px;
+  margin-bottom: 117px;
+  opacity: 0 ;
+  visibility: hidden;
+  transform: scale(0.1);
+}
